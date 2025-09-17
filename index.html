@@ -969,19 +969,73 @@
               </div>
             </div>
 
-            <!-- Right Column: Contact Form -->
-            <div class="bg-gradient-to-br from-surface/80 to-surface/40 backdrop-blur-sm rounded-3xl p-8 ring-1 ring-white/10">
-              <h3 class="text-xl font-semibold text-white mb-6">Get Your Custom Quote</h3>
-              
-              <form class="space-y-6">
-                <div class="grid m    <!-- SERVICES -->
-    <section id="services" class="py-20 bg-[#F7F8FA] text-slate-900">
-      <div class="mx-auto max-w-7xl px-5">
-        <div class="text-center mb-16">
-          <p class="text-xs font-semibold tracking-widest text-slate-500 uppercase mb-3">Our Services</p>
-          <h2 class="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-4">Complete Real Estate Media Solutions</h2>
-          <p class="max-w-3xl mx-auto text-slate-600 leading-relaxed">From cinematic FPV tours to professional photography and social media content — everything you need to showcase properties and elevate your brand.</p>
-        </div>
+<!-- Right Column: Contact Form -->
+<form id="contactForm"
+      class="rounded-2xl bg-surface p-6 md:p-8 ring-1 ring-white/5 w-full">
+  <h3 class="font-display text-2xl md:text-3xl font-semibold tracking-tight">Quick Contact</h3>
+  <p class="mt-2 text-white/70 text-sm">Tell us about your listing and dates. We’ll reply with availability and a clear estimate.</p>
 
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+  <div class="mt-6 grid gap-4">
+    <!-- Name -->
+    <div class="grid gap-2">
+      <label for="name" class="text-sm text-white/80">Name</label>
+      <input id="name" name="name" type="text" required
+             class="rounded-xl bg-white/5 px-4 py-3 ring-1 ring-white/10 outline-none focus:ring-accent/60"
+             placeholder="Your full name">
+    </div>
+
+    <!-- Email + Phone -->
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div class="grid gap-2">
+        <label for="email" class="text-sm text-white/80">Email</label>
+        <input id="email" name="email" type="email" required
+               class="rounded-xl bg-white/5 px-4 py-3 ring-1 ring-white/10 outline-none focus:ring-accent/60"
+               placeholder="you@company.com">
+      </div>
+      <div class="grid gap-2">
+        <label for="phone" class="text-sm text-white/80">Phone (optional)</label>
+        <input id="phone" name="phone" type="tel"
+               class="rounded-xl bg-white/5 px-4 py-3 ring-1 ring-white/10 outline-none focus:ring-accent/60"
+               placeholder="+1 (___) ___-____">
+      </div>
+    </div>
+
+    <!-- City + Portfolio -->
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div class="grid gap-2">
+        <label for="city" class="text-sm text-white/80">City / Area</label>
+        <input id="city" name="city" type="text" required
+               class="rounded-xl bg-white/5 px-4 py-3 ring-1 ring-white/10 outline-none focus:ring-accent/60"
+               placeholder="City, State">
+      </div>
+      <div class="grid gap-2">
+        <label for="portfolio" class="text-sm text-white/80">Portfolio size</label>
+        <select id="portfolio" name="portfolio"
+                class="rounded-xl bg-white/5 px-4 py-3 ring-1 ring-white/10 outline-none focus:ring-accent/60">
+          <option value="3-5">3–5 properties</option>
+          <option value="5-10">5–10 properties</option>
+          <option value="10-15">10–15 properties</option>
+          <option value="15plus">15+ properties</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Message -->
+    <div class="grid gap-2">
+      <label for="message" class="text-sm text-white/80">Message</label>
+      <textarea id="message" name="message" rows="4"
+                class="rounded-xl bg-white/5 px-4 py-3 ring-1 ring-white/10 outline-none focus:ring-accent/60"
+                placeholder="Listing links, timeline, add-ons (photos, 3D, reels)…"></textarea>
+    </div>
+
+    <!-- Submit -->
+    <button type="submit"
+            class="mt-2 inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 font-semibold text-black hover:shadow-soft transition">
+      Send message
+    </button>
+
+    <p class="text-xs text-white/50">*A minimum of <strong>3 properties</strong> is required per order. Typical turnaround: 48–72 hours.</p>
+  </div>
+</form>
+
 

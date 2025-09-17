@@ -720,7 +720,7 @@
     <div class="relative">
       <!-- Centro: drone con órbitas -->
       <div class="flex justify-center mb-12">
-        <div class="relative">
+        <div class="relative w-[800px] h-[600px] flex items-center justify-center">
           <!-- Círculos orbitales -->
           <div class="absolute inset-0 flex items-center justify-center">
             <div class="w-[400px] h-[400px] border border-primary/20 rounded-full"></div>
@@ -728,107 +728,109 @@
           </div>
           
           <!-- Drone central -->
-          <div class="relative bg-surface-light rounded-full p-8 border border-primary/30 shadow-2xl floating-benefit">
+          <div class="relative bg-surface-light rounded-full p-8 border border-primary/30 shadow-2xl floating-benefit z-10">
             <img
               src="https://se-cdn.djiits.com/tpc/uploads/spu/cover/daf2c8fd679eb886c0ba45a1d015a5fc@xlarge.png"
               alt="DJI Avata FPV drone"
               class="w-48 h-auto drop-shadow-2xl" />
           </div>
           
-          <!-- Beneficios orbitales -->
-          <!-- Beneficio 1 -->
-          <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-8">
-            <div class="benefit-card bg-surface-light/90 backdrop-blur-sm p-4 rounded-2xl border border-primary/30 w-72 text-center">
-              <div class="flex items-center justify-center gap-3 mb-3">
-                <div class="benefit-number">01</div>
-                <div class="benefit-icon">
-                  <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-                  </svg>
+          <!-- Beneficios orbitales - Solo visible en desktop -->
+          <div class="hidden lg:block">
+            <!-- Beneficio 1 - Top -->
+            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-4">
+              <div class="benefit-card bg-surface-light/90 backdrop-blur-sm p-4 rounded-2xl border border-primary/30 w-64 text-center">
+                <div class="flex items-center justify-center gap-3 mb-3">
+                  <div class="benefit-number">01</div>
+                  <div class="benefit-icon">
+                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                    </svg>
+                  </div>
                 </div>
+                <h4 class="font-semibold text-white mb-2 text-sm">Immersive Walkthroughs</h4>
+                <p class="text-xs text-white/70">Seamless room-to-room flow</p>
               </div>
-              <h4 class="font-semibold text-white mb-2">Immersive Walkthroughs</h4>
-              <p class="text-sm text-white/70">Seamless room-to-room flow that sells the layout instantly</p>
             </div>
-          </div>
-          
-          <!-- Beneficio 2 -->
-          <div class="absolute top-16 right-0 transform translate-x-8">
-            <div class="benefit-card bg-surface-light/90 backdrop-blur-sm p-4 rounded-2xl border border-accent/30 w-72">
-              <div class="flex items-center gap-3 mb-3">
-                <div class="benefit-number">02</div>
-                <div class="benefit-icon">
-                  <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                  </svg>
+            
+            <!-- Beneficio 2 - Top Right -->
+            <div class="absolute top-12 right-0 transform translate-x-4">
+              <div class="benefit-card bg-surface-light/90 backdrop-blur-sm p-4 rounded-2xl border border-accent/30 w-64">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="benefit-number">02</div>
+                  <div class="benefit-icon">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                  </div>
                 </div>
+                <h4 class="font-semibold text-white mb-2 text-sm">Access & Angles</h4>
+                <p class="text-xs text-white/70">Tight spaces without heavy gear</p>
               </div>
-              <h4 class="font-semibold text-white mb-2">Access & Angles</h4>
-              <p class="text-sm text-white/70">Reach tight spaces without heavy gear or complex setups</p>
             </div>
-          </div>
-          
-          <!-- Beneficio 3 -->
-          <div class="absolute bottom-16 right-0 transform translate-x-8">
-            <div class="benefit-card bg-surface-light/90 backdrop-blur-sm p-4 rounded-2xl border border-primary-light/30 w-72">
-              <div class="flex items-center gap-3 mb-3">
-                <div class="benefit-number">03</div>
-                <div class="benefit-icon">
-                  <svg class="w-6 h-6 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                  </svg>
+            
+            <!-- Beneficio 3 - Bottom Right -->
+            <div class="absolute bottom-12 right-0 transform translate-x-4">
+              <div class="benefit-card bg-surface-light/90 backdrop-blur-sm p-4 rounded-2xl border border-primary-light/30 w-64">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="benefit-number">03</div>
+                  <div class="benefit-icon">
+                    <svg class="w-6 h-6 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                    </svg>
+                  </div>
                 </div>
+                <h4 class="font-semibold text-white mb-2 text-sm">Cinematic Stability</h4>
+                <p class="text-xs text-white/70">Movie-grade smooth motion</p>
               </div>
-              <h4 class="font-semibold text-white mb-2">Cinematic Stability</h4>
-              <p class="text-sm text-white/70">Movie-grade smooth motion without tracks or gimbals</p>
             </div>
-          </div>
-          
-          <!-- Beneficio 4 -->
-          <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-8">
-            <div class="benefit-card bg-surface-light/90 backdrop-blur-sm p-4 rounded-2xl border border-accent/30 w-72 text-center">
-              <div class="flex items-center justify-center gap-3 mb-3">
-                <div class="benefit-number">04</div>
-                <div class="benefit-icon">
-                  <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
-                  </svg>
+            
+            <!-- Beneficio 4 - Bottom -->
+            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-4">
+              <div class="benefit-card bg-surface-light/90 backdrop-blur-sm p-4 rounded-2xl border border-accent/30 w-64 text-center">
+                <div class="flex items-center justify-center gap-3 mb-3">
+                  <div class="benefit-number">04</div>
+                  <div class="benefit-icon">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+                    </svg>
+                  </div>
                 </div>
+                <h4 class="font-semibold text-white mb-2 text-sm">Context & Scale</h4>
+                <p class="text-xs text-white/70">Aerial perspectives reveal lot size</p>
               </div>
-              <h4 class="font-semibold text-white mb-2">Context & Scale</h4>
-              <p class="text-sm text-white/70">Aerial perspectives reveal lot size and neighborhood context</p>
             </div>
-          </div>
-          
-          <!-- Beneficio 5 -->
-          <div class="absolute top-16 left-0 transform -translate-x-8">
-            <div class="benefit-card bg-surface-light/90 backdrop-blur-sm p-4 rounded-2xl border border-primary/30 w-72">
-              <div class="flex items-center gap-3 mb-3">
-                <div class="benefit-number">05</div>
-                <div class="benefit-icon">
-                  <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                  </svg>
+            
+            <!-- Beneficio 5 - Top Left -->
+            <div class="absolute top-12 left-0 transform -translate-x-4">
+              <div class="benefit-card bg-surface-light/90 backdrop-blur-sm p-4 rounded-2xl border border-primary/30 w-64">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="benefit-number">05</div>
+                  <div class="benefit-icon">
+                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
                 </div>
+                <h4 class="font-semibold text-white mb-2 text-sm">Speed & Efficiency</h4>
+                <p class="text-xs text-white/70">Minimal disruption and setup</p>
               </div>
-              <h4 class="font-semibold text-white mb-2">Speed & Efficiency</h4>
-              <p class="text-sm text-white/70">Faster shoots with minimal disruption and setup time</p>
             </div>
-          </div>
-          
-          <!-- Beneficio 6 -->
-          <div class="absolute bottom-16 left-0 transform -translate-x-8">
-            <div class="benefit-card bg-surface-light/90 backdrop-blur-sm p-4 rounded-2xl border border-primary-light/30 w-72">
-              <div class="flex items-center gap-3 mb-3">
-                <div class="benefit-number">06</div>
-                <div class="benefit-icon">
-                  <svg class="w-6 h-6 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m4 0H3a1 1 0 000 2v12a3 3 0 003 3h12a3 3 0 003-3V6a1 1 0 000-2z"/>
-                  </svg>
+            
+            <!-- Beneficio 6 - Bottom Left -->
+            <div class="absolute bottom-12 left-0 transform -translate-x-4">
+              <div class="benefit-card bg-surface-light/90 backdrop-blur-sm p-4 rounded-2xl border border-primary-light/30 w-64">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="benefit-number">06</div>
+                  <div class="benefit-icon">
+                    <svg class="w-6 h-6 text-primary-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m4 0H3a1 1 0 000 2v12a3 3 0 003 3h12a3 3 0 003-3V6a1 1 0 000-2z"/>
+                    </svg>
+                  </div>
                 </div>
+                <h4 class="font-semibold text-white mb-2 text-sm">4K Performance</h4>
+                <p class="text-xs text-white/70">Optimized for all platforms</p>
               </div>
-              <h4 class="font-semibold text-white mb-2">4K Performance</h4>
-              <p class="text-sm text-white/70">Crisp content optimized for YouTube, MLS, and social media</p>
             </div>
           </div>
         </div>

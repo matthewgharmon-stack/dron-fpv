@@ -33,39 +33,22 @@
 
     <link rel="preload" as="image" href="/assets/logo.png">
 
-    <style>
-      html, body { height: 100%; }
-      .glass { backdrop-filter: saturate(140%) blur(10px); }
+   <style>
+html, body { height: 100%; }
+.glass { backdrop-filter: saturate(140%) blur(10px); }
 
-      .hero-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); position: relative; overflow: hidden; }
-      .hero-bg::before { content: ''; position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2075&q=80') center/cover; opacity: 0.8; z-index: 1; }
-      .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(15,17,23,.3), rgba(15,17,23,.7)); z-index: 2; }
-      .hero-content { position: relative; z-index: 3; }
+/* Portfolio general */
+#work .portfolio-description {
+  white-space: normal;
+  max-width: 100%;
+  text-align: center;
+  line-height: 1.5;
+}
+#work .portfolio-description span {
+  white-space: normal;
+}
 
-      .floating-element { animation: float 6s ease-in-out infinite; }
-      @keyframes float { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-20px) rotate(2deg)} }
-
-      .feature-card { backdrop-filter: blur(10px); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); transition: all .3s ease; }
-      .feature-card:hover { background: rgba(255,255,255,0.2); transform: translateY(-5px); }
-
-      .pulse-ring { animation: pulse-ring 2s cubic-bezier(0.455,0.03,0.515,0.955) infinite; }
-      @keyframes pulse-ring { 0%{transform:scale(.8);opacity:1} 100%{transform:scale(2.5);opacity:0} }
-
-      .tech-badge { background: rgba(10,136,140,0.10); border: 1px solid rgba(10,136,140,0.30); color: #0a888c; backdrop-filter: blur(10px); }
-
-      :root{ --portfolio-green: #0a888c; }
-      .portfolio-solid{ position: relative; background: var(--portfolio-green); overflow: hidden; }
-      .portfolio-solid::before{ content:""; position:absolute; left:0; right:0; top:-120px; height:160px; background: linear-gradient(to bottom, #F7F8FA 0%, rgba(247,248,250,0) 80%); pointer-events:none; z-index:1; }
-      .portfolio-solid::after{ content:""; position:absolute; left:0; right:0; bottom:-120px; height:160px; background: linear-gradient(to top, #F7F8FA 0%, rgba(247,248,250,0) 80%); pointer-events:none; z-index:1; }
-      .portfolio-content{ position:relative; z-index:2; }
-
-      .dark-gradient-bg{ position:relative; overflow:hidden; background: linear-gradient(135deg, #0f1117 0%, #1a202c 35%, #242d3d 70%, #0f1117 100%); }
-      .dark-content{ position:relative; z-index:2; }
-
-      #about{ position:relative; }
-      #about::before{ content:""; position:absolute; left:0; right:0; top:-100px; height:100px; background: linear-gradient(to bottom, rgba(247,248,250,1), rgba(15,17,23,0)); pointer-events:none; z-index:1; }
-
-
+/* Galería */
 .gallery-scroll {
   display: flex;
   overflow-x: auto;
@@ -75,11 +58,9 @@
   -webkit-overflow-scrolling: touch;
   padding: 8px;
 }
+.gallery-scroll::-webkit-scrollbar { display: none; }
 
-.gallery-scroll::-webkit-scrollbar {
-  display: none;
-}
-
+/* Imágenes */
 .gallery-scroll img {
   height: 250px;
   border-radius: 12px;
@@ -88,14 +69,14 @@
   scroll-snap-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-/* === Ajuste uniforme para todos los recuadros del portafolio === */
+
+/* Recuadros de video */
 #work .relative.overflow-hidden {
   aspect-ratio: 16 / 9 !important;
   background-color: transparent !important;
   padding: 0 !important;
   height: auto !important;
 }
-
 #work .relative.overflow-hidden iframe,
 #work .relative.overflow-hidden img {
   width: 100%;
@@ -104,57 +85,47 @@
   display: block;
 }
 
-/* Corrige la galería (sin recortes, misma alineación visual que videos) */
+/* Galería horizontal */
 #work .gallery-card {
   width: 100%;
-  height: auto;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 14px;
-  overflow: visible; /* permite que la imagen se extienda un poco si lo necesita */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 35px; /* agrega espacio solo abajo del marco */
+  overflow: visible;
+  padding-bottom: 35px;
 }
-
-/* Galería horizontal */
 #work .gallery-scroll {
   display: flex;
   gap: 16px;
-  overflow-x: auto;              /* asegura el scroll horizontal */
-  overflow-y: visible;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
   align-items: center;
   width: 100%;
   padding: 0 5%;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  max-height: none;              /* quita límite de alto para mostrar todo */
 }
+#work .gallery-scroll::-webkit-scrollbar { display: none; }
 
-#work .gallery-scroll::-webkit-scrollbar {
-  display: none;
-}
-
-/* Imágenes sin recorte */
 #work .gallery-scroll img {
   flex-shrink: 0;
-  height: auto;           /* deja que la imagen determine su altura */
-  max-height: 360px;      /* altura máxima visual para mantener equilibrio */
-  width: auto;            /* mantiene proporción original */
-  object-fit: contain;    /* muestra toda la imagen completa */
+  height: auto;
+  max-height: 360px;
+  width: auto;
+  object-fit: contain;
   border-radius: 12px;
   scroll-snap-align: center;
   transition: transform 0.3s ease;
 }
 
-/* 🔻 Etiquetas de los videos e imágenes (posición inferior izquierda) */
+/* Etiquetas */
 .relative > span {
   position: absolute !important;
   bottom: 10px;
   left: 10px;
-  top: auto !important;
   background: rgba(0, 0, 0, 0.55);
   color: white;
   font-size: 0.75rem;
@@ -163,7 +134,7 @@
   z-index: 15;
 }
 
-/* ⚙️ Flechas de la galería (versión pequeña, redonda y pegada al borde) */
+/* Flechas */
 .gallery-arrow {
   position: absolute;
   top: 50%;
@@ -171,11 +142,11 @@
   background: rgba(255, 255, 255, 0.25);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.4);
-  font-size: 0.9rem;         /* más pequeñas */
-  padding: 4px;              /* tamaño compacto */
+  font-size: 0.9rem;
+  padding: 4px;
   width: 28px;
   height: 28px;
-  border-radius: 50%;        /* círculo perfecto */
+  border-radius: 50%;
   cursor: pointer;
   z-index: 50;
   display: flex;
@@ -184,55 +155,31 @@
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
   transition: background 0.25s ease, transform 0.2s ease;
 }
-
-/* Hover */
 .gallery-arrow:hover {
   background: rgba(255, 255, 255, 0.5);
   transform: translateY(-50%) scale(1.1);
 }
+.left-arrow { left: -8px; }
+.right-arrow { right: -8px; }
 
-/* Posición más cerca del borde exterior */
-.left-arrow {
-  left: -8px;
-}
-
-.right-arrow {
-  right: -8px;
-}
-
-/* evita saltos de línea innecesarios en la descripción del portfolio */
-.portfolio-description {
-  white-space: normal;
-  max-width: 100%;
-}
-.portfolio-description span {
-  white-space: nowrap; /* mantiene frases completas en una sola línea */
-}
-
-      /* Solo muestra thumbnail en mobile */
+/* === Mobile optimización === */
 @media (max-width: 768px) {
-  .desktop-iframe {
-    display: none !important;
-  }
-  .mobile-thumb,
-  .mobile-play {
-    display: block;
+  .desktop-iframe { display: none !important; }
+  .mobile-thumb, .mobile-play { display: block; }
+  #work .portfolio-description {
+    font-size: 0.9rem;
+    white-space: normal;
+    word-break: break-word;
+    padding: 0 12px;
   }
 }
-
-/* Solo muestra iframe en desktop */
+/* === Desktop === */
 @media (min-width: 769px) {
-  .mobile-thumb,
-  .mobile-play {
-    display: none !important;
-  }
-  .desktop-iframe {
-    display: block;
-  }
+  .mobile-thumb, .mobile-play { display: none !important; }
+  .desktop-iframe { display: block; }
 }
+</style>
 
-      
-    </style>
   </head>
   <body class="bg-obsidian text-ink font-sans antialiased">
 
@@ -1393,5 +1340,41 @@ document.querySelectorAll('#work .gallery-scroll').forEach(scrollContainer => {
   }
 });
 </script>
+
+    <script>
+// 🎥 Click-to-play solo en mobile
+document.querySelectorAll('.yt-card').forEach(card => {
+  const id = card.getAttribute('data-ytid');
+  if (window.innerWidth <= 768) {
+    card.addEventListener('click', () => {
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+      iframe.title = 'YouTube video player';
+      iframe.frameBorder = '0';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      iframe.className = 'absolute inset-0 w-full h-full';
+      card.innerHTML = '';
+      card.appendChild(iframe);
+    }, { once: true });
+  }
+});
+
+// 🖼️ Flechas HDR Gallery
+document.querySelectorAll('#work .gallery-scroll').forEach(scrollContainer => {
+  const parent = scrollContainer.closest('#work');
+  const leftArrow = parent.querySelector('.left-arrow');
+  const rightArrow = parent.querySelector('.right-arrow');
+  if (leftArrow && rightArrow && scrollContainer) {
+    leftArrow.addEventListener('click', () => {
+      scrollContainer.scrollBy({ left: -400, behavior: 'smooth' });
+    });
+    rightArrow.addEventListener('click', () => {
+      scrollContainer.scrollBy({ left: 400, behavior: 'smooth' });
+    });
+  }
+});
+</script>
 </body>
 </html>
+

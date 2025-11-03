@@ -209,56 +209,19 @@
   white-space: nowrap; /* mantiene frases completas en una sola línea */
 }
 
-      /* Solo muestra thumbnail en mobile */
+/* 🔧 Fix corte de texto “Portfolio” en iPhone y móviles */
 @media (max-width: 768px) {
-  .desktop-iframe {
-    display: none !important;
-  }
-  .mobile-thumb,
-  .mobile-play {
-    display: block;
-  }
-}
-
-/* Solo muestra iframe en desktop */
-@media (min-width: 769px) {
-  .mobile-thumb,
-  .mobile-play {
-    display: none !important;
-  }
-  .desktop-iframe {
-    display: block;
-  }
-}   
-      
-   @media (max-width: 768px) {
   #work {
-    scroll-margin-top: 90px; /* asegura que el texto no quede oculto bajo el header */
-    padding-top: 40px;       /* agrega algo de aire arriba solo en móvil */
+    scroll-margin-top: 120px !important; /* margen al hacer clic desde menú */
+    padding-top: 80px !important;        /* espacio superior para header fijo */
   }
 
   #work h2 {
-    margin-top: 1rem;        /* evita que quede pegado al borde */
-  }
-}
-
-      @media (max-width: 768px) {
-  #work {
-    scroll-margin-top: 110px !important; /* aumenta un poco el margen de anclaje */
-    padding-top: 50px !important;       /* agrega aire extra arriba */
-  }
-
-  #work h2 {
-    margin-top: 1.5rem !important;      /* evita que quede pegado al borde superior */
+    margin-top: 1.5rem !important;
   }
 
   #work p.portfolio-description {
-    margin-top: 0.5rem !important;      /* mantiene buen espacio visual entre título y texto */
-  }
-}
-      @media (max-width: 768px) {
-  #work {
-    padding-top: 90px !important;  /* espacio extra solo en mobile */
+    margin-top: 0.75rem !important;
   }
 }
 
